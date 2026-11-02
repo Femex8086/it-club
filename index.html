@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta name="description" content="Mary Matha IT Club – a community of passionate developers, designers and innovators at Mary Matha Arts &amp; Science College.">
+  <title>Mary Matha IT Club</title>
+  <link rel="icon" href="images/logo.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== WELCOME POPUP ===================== -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="welcome-modal">
+          <div class="modal-body text-center">
+            <div class="glow-circle"></div>
+
+            <!-- Logo slot: replace images/logo.jpeg with the college logo/icon if you want -->
+            <img src="images/logo.jpeg" alt="Mary Matha Arts &amp; Science College logo" class="welcome-logo">
+            <p class="welcome-college">Mary Matha Arts &amp; Science College</p>
+
+            <h1 class="welcome-title">MARY MATHA IT CLUB</h1>
+            <p class="welcome-subtitle">Innovate • Build • Create</p>
+
+            <h4 class="welcome-heading">Welcome to the Future of Technology</h4>
+            <p class="welcome-text">
+              Explore projects, events, workshops, hackathons and innovations
+              created by passionate student developers.
+            </p>
+
+            <button type="button" class="btn btn-primary btn-lg explore-btn" data-bs-dismiss="modal">
+              Explore Now →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo d-flex align-items-center" href="#home">
+        <img src="images/logo.jpeg" alt="IT Club Logo" class="brand-image">
+        <span class="brand-text">Mary Matha IT Club</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#main-navbar" aria-controls="main-navbar"
+              aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Desktop: normal menu bar. Mobile: panel that slides in from the right -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="main-navbar" aria-labelledby="menuTitle">
+        <div class="offcanvas-header">
+          <div class="d-flex align-items-center gap-2">
+            <img src="images/logo.jpeg" alt="" class="brand-image">
+            <span class="menu-title" id="menuTitle">Mary Matha IT Club</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <div class="navbar-nav mx-auto nav-links">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#activities">Activities</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#articles">Articles</a>
+            <a class="nav-link" href="#about">About</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-overlay">
+        <div class="container text-center">
+          <span class="hero-badge">Innovation • Coding • Technology</span>
+
+          <img src="images/logo.jpeg" alt="Mary Matha IT Club logo" class="hero-logo">
+
+          <h1 class="hero-title">
+            Welcome to<br>
+            <span>Mary Matha IT Club</span>
+          </h1>
+
+          <p class="hero-description">
+            A community of passionate developers, designers, and innovators
+            building the future through technology, creativity, and teamwork.
+          </p>
+
+          <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+            <a href="#about" class="btn btn-primary btn-lg">Join Us</a>
+            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACTIVITIES ===================== -->
+    <section class="activities-section py-5" id="activities">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="activity-heading mt-4">IT Club Activities (2026)</h2>
+        </div>
+
+        <div id="activityCarousel" class="carousel slide activity-carousel"
+             data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="carousel-inner">
+
+            <!-- Activity 1 -->
+            <div class="carousel-item active">
+              <div class="card activity-card border-0 mx-auto">
+                <div class="row g-0 align-items-center">
+                  <div class="col-lg-5">
+                    <div class="image-wrapper">
+                      <img src="images/activities/image1.jpg" class="card-img activity-image"
+                           alt="Plant Identification Campaign"
+                           data-bs-toggle="modal" data-bs-target="#activityModal">
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="card-body p-4 p-lg-5">
+                      <small class="activity-date">-5 June 2026</small>
+                      <h5 class="card-title activity-title mt-3">Plant Identification Campaign</h5>
+                      <p class="card-text activity-description mt-3">
+                        Conducted a Plant Identification Campaign across the campus to promote environmental awareness. Students identified and documented various plant species, encouraging biodiversity conservation and the use of digital tools for learning about native plants.
+                      </p>
+                      <button type="button" class="activity-btn mt-4"
+                              data-bs-toggle="modal" data-bs-target="#activityModal">View Activity →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="carousel-item">
+              <div class="card activity-card border-0 mx-auto">
+                <div class="row g-0 align-items-center">
+                  <div class="col-lg-5">
+                    <div class="image-wrapper">
+                      <img src="images/activities/image2.jpg" class="card-img activity-image"
+                           alt="Alan Turing Day Documentary Screening"
+                           data-bs-toggle="modal" data-bs-target="#activityModal">
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="card-body p-4 p-lg-5">
+                      <small class="activity-date">-24 june 2026</small>
+                      <h5 class="card-title activity-title mt-3">Alan Turing Day Documentary Screening</h5>
+                      <p class="card-text activity-description mt-3">
+                        Organized a screening of the documentary "The Life and Death of Alan Turing" in connection with Alan Turing Day for IT Club members. The programme highlighted Alan Turing's pioneering contributions to computer science and artificial intelligence, followed by a discussion among participants. Eight students participated in the programme.
+                      </p>
+                      <button type="button" class="activity-btn mt-4"
+                              data-bs-toggle="modal" data-bs-target="#activityModal">View Activity →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="carousel-item">
+              <div class="card activity-card border-0 mx-auto">
+                <div class="row g-0 align-items-center">
+                  <div class="col-lg-5">
+                    <div class="image-wrapper">
+                      <img src="images/activities/image3.jpg" class="card-img activity-image"
+                           alt="Cyber Security Awareness Campaign"
+                           data-bs-toggle="modal" data-bs-target="#activityModal">
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="card-body p-4 p-lg-5">
+                      <small class="activity-date">-17 july 2026</small>
+                      <h5 class="card-title activity-title mt-3">Cyber Security Awareness Campaign</h5>
+                      <p class="card-text activity-description mt-3">
+                        Conducted a campus-wide Cyber Security Awareness Campaign focusing on safe online practices, password security, phishing awareness, digital privacy, and responsible internet usage. Awareness materials and promotional posters were prepared as part of the campaign.
+                      </p>
+                      <button type="button" class="activity-btn mt-4"
+                              data-bs-toggle="modal" data-bs-target="#activityModal">View Activity →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 4 -->
+            <div class="carousel-item">
+              <div class="card activity-card border-0 mx-auto">
+                <div class="row g-0 align-items-center">
+                  <div class="col-lg-5">
+                    <div class="image-wrapper">
+                      <img src="images/activities/image4.jpg" class="card-img activity-image"
+                           alt="FIFA World Cup Winner Prediction Contest"
+                           data-bs-toggle="modal" data-bs-target="#activityModal">
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="card-body p-4 p-lg-5">
+                      <small class="activity-date">-june-july 2026</small>
+                      <h5 class="card-title activity-title mt-3">FIFA World Cup Winner Prediction Contest</h5>
+                      <p class="card-text activity-description mt-3">
+                        Organized a FIFA World Cup Winner Prediction Contest online through the website developed by IT club member, Mr Faris Moideen to engage students during the tournament. Participants predicted the eventual FIFA World Cup champion, promoting interaction and enthusiasm among students through a fun, technology-enabled activity.
+                      </p>
+                      <button type="button" class="activity-btn mt-4"
+                              data-bs-toggle="modal" data-bs-target="#activityModal">View Activity →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#activityCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#activityCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS / CONTRIBUTIONS ===================== -->
+    <section class="contributions-section py-5" id="projects">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="contribution-heading mt-4">IT Club Digital Contributions</h2>
+        </div>
+
+        <div class="row" id="projectGrid">
+
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image5.jpg" class="card-img-top project-image"
+                     alt="College Library Entry–Exit Management System" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">College Library Entry–Exit Management System</h5>
+                <div class="project-desc d-none">Developed and maintained a digital entry–exit management system for the college library.
+Automated the recording of student and visitor entry/exit details.
+Reduced manual register maintenance and improved the accuracy of library usage records.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="http://library.marymathacollege.ac.in/inout/login.php" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image6.jpg" class="card-img-top project-image"
+                     alt="Online Event Report Generation System" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">Online Event Report Generation System</h5>
+                <div class="project-desc d-none">Developed an online event report submission system for teaching staff.
+Automatically generated standardized event reports for documentation and IQAC requirements.
+Simplified report preparation and ensured consistency across departments.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://forms.gle/tScqehCYu7Gad4zR7" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image7.jpg" class="card-img-top project-image"
+                     alt="Online Event Request System" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">Online Event Request System</h5>
+                <div class="project-desc d-none">Developed an online platform for submitting event requests by departments, clubs, and cells.
+Streamlined the event approval process.
+Centralized event information for better coordination and record management.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://forms.gle/jqDxpfYHqhCZgxgNA" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image9.jpg" class="card-img-top project-image"
+                     alt="MMCTT – Online Timetable Entry Portal" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">MMCTT – Online Timetable Entry Portal</h5>
+                <div class="project-desc d-none">Designed and maintained the MMCTT online timetable entry portal.
+Enabled faculty members to enter timetable and subject allocation details digitally.
+Simplified timetable preparation and minimized manual data entry errors.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://mmctt.pages.dev/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image8.jpg" class="card-img-top project-image"
+                     alt="College Automation System Support" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">College Automation System Support</h5>
+                <div class="project-desc d-none">Provided technical support for various college automation initiatives.
+Assisted in maintaining web-based administrative applications.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://tcs.marymathacollege.ac.in/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image2.jpg" class="card-img-top project-image"
+                     alt="College Fine Arts Score board Website" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">College Fine Arts Score board Website</h5>
+                <div class="project-desc d-none">Developed the official website for the College Fine Arts Festival.
+Published event schedules, department-wise scoreboards, and competition results.
+Integrated Google Sheets for real-time score updates.</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://aaravam26.pages.dev/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image1.jpg" class="card-img-top project-image"
+                     alt="FIFA World Cup Winner Prediction Contest Website" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">FIFA World Cup Winner Prediction Contest Website</h5>
+                <div class="project-desc d-none">Designed and hosted an online prediction portal for the FIFA World Cup.
+Allowed participants to submit match winner predictions digitally.
+Automated the collection and management of participant responses.
+Developed by: Faris Moideen
+
+BSc Computer Science 2025-2029 Batch</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://wchub.pages.dev" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image4.jpg" class="card-img-top project-image"
+                     alt="Website Development and Maintenance" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">Website Development and Maintenance</h5>
+                <div class="project-desc d-none">Timely updation of college website with events, news and achievements</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://marymathacollege.ac.in/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 9 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100 border-0">
+              <div class="image-wrapper">
+                <img src="images/contributions/image3.jpg" class="card-img-top project-image"
+                     alt="Gateease" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title project-title">Gateease</h5>
+                <div class="project-desc d-none">Designed and developed GateEase, a web-based digital gate pass management system for Mary Matha Arts &amp; Science College.
+Streamlined the process of issuing, approving, and managing gate passes through an online platform.
+Improved efficiency by replacing manual gate pass procedures with a secure digital workflow for students and the institution.
+
+Developed by: Adwaith Pramod and Team
+
+B.Sc. Computer Science (2023–2026 Batch)</div>
+                <div class="mt-auto d-flex gap-2">
+                  <a class="btn btn-primary visit-btn" href="https://gateease.marymathacollege.ac.in/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                  <button type="button" class="btn btn-primary read-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NEWSLETTER ===================== -->
+    <section class="newsletter-section py-5" id="articles">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="newsletter-badge">📰 LATEST UPDATES</span>
+          <h2 class="newsletter-heading mt-4">Club Newsletters</h2>
+          <p class="newsletter-subtitle mt-3">
+            Stay informed with the latest activities, achievements, announcements,
+            and events from the Mary Matha IT Club.
+          </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card newsletter-card border-0 h-100">
+              <div class="newsletter-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                     class="card-img-top newsletter-image"
+                     alt="Web Development Bootcamp Successfully Completed" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <small class="newsletter-date">-July 15, 2026</small>
+                <h5 class="card-title newsletter-title mt-2">Web Development Bootcamp Successfully Completed</h5>
+                <p class="card-text newsletter-text">Students completed an intensive workshop covering React, Bootstrap, and modern web development practices.</p>
+                <div class="news-full d-none">The IT Club successfully conducted a Web Development Bootcamp where students learned HTML, CSS, JavaScript, React, Bootstrap, and modern frontend development techniques. Participants worked on real-world projects, collaborated with peers, and gained hands-on experience in building responsive web applications.</div>
+                <button type="button" class="btn btn-primary newsletter-btn mt-auto"
+                        data-bs-toggle="modal" data-bs-target="#newsModal">Read Article →</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card newsletter-card border-0 h-100">
+              <div class="newsletter-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                     class="card-img-top newsletter-image"
+                     alt="Hackathon 2026 Winners Announced" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <small class="newsletter-date">-June 28, 2026</small>
+                <h5 class="card-title newsletter-title mt-2">Hackathon 2026 Winners Announced</h5>
+                <p class="card-text newsletter-text">The annual IT Club Hackathon saw teams develop innovative solutions in just 24 hours.</p>
+                <div class="news-full d-none">Hackathon 2026 brought together talented students from various departments. Teams worked around the clock to create innovative software solutions, websites, and mobile applications. The event encouraged creativity, teamwork, and problem-solving while providing valuable experience in software development.</div>
+                <button type="button" class="btn btn-primary newsletter-btn mt-auto"
+                        data-bs-toggle="modal" data-bs-target="#newsModal">Read Article →</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card newsletter-card border-0 h-100">
+              <div class="newsletter-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+                     class="card-img-top newsletter-image"
+                     alt="AI &amp; Future Technologies Seminar" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <small class="newsletter-date">-May 20, 2026</small>
+                <h5 class="card-title newsletter-title mt-2">AI &amp; Future Technologies Seminar</h5>
+                <p class="card-text newsletter-text">Industry experts shared insights into AI, machine learning, and emerging technologies.</p>
+                <div class="news-full d-none">The seminar focused on Artificial Intelligence, Machine Learning, and future technology trends. Industry professionals shared their experiences, discussed career opportunities, and demonstrated real-world AI applications. Students gained valuable insights into one of the fastest-growing fields in technology.</div>
+                <button type="button" class="btn btn-primary newsletter-btn mt-auto"
+                        data-bs-toggle="modal" data-bs-target="#newsModal">Read Article →</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-section" id="about">
+    <div class="container">
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <h3 class="footer-logo">Mary Matha IT Club</h3>
+          <p class="footer-text">
+            Empowering students through technology, innovation, collaboration,
+            and real-world project development.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#articles">Newsletters</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="footer-title">Contact</h5>
+          <p class="footer-contact"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>Mary Matha Arts &amp; Science College</p>
+          <p class="footer-contact"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span><a href="mailto:itclub@marymatha.edu">itclub@marymatha.edu</a></p>
+          <p class="footer-contact"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></span><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg></a>
+            <a href="#" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="footer-bottom">© 2026 Mary Matha IT Club. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODALS ===================== -->
+
+  <!-- Activity image -->
+  <div class="modal fade" id="activityModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img src="" alt="Activity" class="img-fluid w-100" id="activityModalImg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project details -->
+  <div class="modal fade project-modal" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-banner">
+            <img src="" alt="" class="modal-image" id="projectModalImg">
+            <div class="modal-overlay">
+              <h2 id="projectModalTitle"></h2>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <h4>Project Overview</h4>
+            <p class="modal-description" id="projectModalDesc"></p>
+
+            <div class="d-flex gap-3 mt-4">
+              <a class="btn btn-primary visit-btn" id="projectModalLink" href="#" target="_blank" rel="noopener noreferrer">Visit Website 🚀</a>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter article -->
+  <div class="modal fade newsletter-modal" id="newsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="news-banner">
+            <img src="" alt="" class="news-modal-image" id="newsModalImg">
+            <button type="button" class="close-news-btn" data-bs-dismiss="modal" aria-label="Close">✕</button>
+            <div class="news-overlay">
+              <div>
+                <span class="news-date-badge" id="newsModalDate"></span>
+                <h2 class="mt-3" id="newsModalTitle"></h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-content-wrapper">
+            <p class="news-content" id="newsModalContent"></p>
+            <button type="button" class="btn btn-primary newsletter-btn mt-3" data-bs-dismiss="modal">Back to News</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
