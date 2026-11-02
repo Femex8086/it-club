@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     if (!reduceMotion) carouselInstance.cycle();
 
-    var activityPages = activityCarousel.parentElement.querySelectorAll(".activity-page");
+    var activityPages = activityCarousel.parentElement.querySelectorAll(".activity-page[data-bs-slide-to]");
     activityCarousel.addEventListener("slid.bs.carousel", function (event) {
       activityPages.forEach(function (button, index) {
         var active = index === event.to;
