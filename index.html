@@ -19,36 +19,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ===================== WELCOME POPUP ===================== -->
-  <div class="modal fade" id="welcomeModal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="welcome-modal">
-          <div class="modal-body text-center">
-            <div class="glow-circle"></div>
-
-            <!-- Logo slot: replace images/logo.jpeg with the college logo/icon if you want -->
-            <img src="images/logo.jpeg" alt="Mary Matha Arts &amp; Science College logo" class="welcome-logo">
-            <p class="welcome-college">Mary Matha Arts &amp; Science College</p>
-
-            <h1 class="welcome-title">MARY MATHA IT CLUB</h1>
-            <p class="welcome-subtitle">Innovate • Build • Create</p>
-
-            <h4 class="welcome-heading">Welcome to the Future of Technology</h4>
-            <p class="welcome-text">
-              Explore projects, events, workshops, hackathons and innovations
-              created by passionate student developers.
-            </p>
-
-            <button type="button" class="btn btn-primary btn-lg explore-btn" data-bs-dismiss="modal">
-              Explore Now →
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="page-progress" aria-hidden="true"><span id="pageProgressBar"></span></div>
 
   <!-- ===================== HEADER ===================== -->
   <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
@@ -91,28 +62,49 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero-section" id="home">
       <div class="hero-overlay">
-        <div class="container text-center">
-          <span class="hero-badge">Innovation • Coding • Technology</span>
+        <div class="container">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <span class="hero-badge"><span class="status-dot"></span> Innovation · Coding · Technology</span>
+              <p class="hero-kicker">MARY MATHA ARTS &amp; SCIENCE COLLEGE</p>
+              <h1 class="hero-title">Welcome to<br><span>Mary Matha<br class="hero-mobile-break"> IT Club</span></h1>
+              <p class="hero-description">
+                A community of passionate developers, designers, and innovators
+                building the future through technology, creativity, and teamwork.
+              </p>
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary btn-lg hero-primary-action">Explore our work <span aria-hidden="true">↗</span></a>
+                <a href="#activities" class="hero-text-link">See club activities <span aria-hidden="true">↓</span></a>
+              </div>
+              <div class="hero-footnote"><span></span> Student-led ideas. Built on campus.</div>
+            </div>
 
-          <img src="images/logo.jpeg" alt="Mary Matha IT Club logo" class="hero-logo">
-
-          <h1 class="hero-title">
-            Welcome to<br>
-            <span>Mary Matha IT Club</span>
-          </h1>
-
-          <p class="hero-description">
-            A community of passionate developers, designers, and innovators
-            building the future through technology, creativity, and teamwork.
-          </p>
-
-          <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
-            <a href="#about" class="btn btn-primary btn-lg">Join Us</a>
-            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+            <div class="hero-stage" aria-hidden="true">
+              <div class="stage-grid"></div>
+              <div class="stage-ring stage-ring-one"></div>
+              <div class="stage-ring stage-ring-two"></div>
+              <div class="stage-ring stage-ring-three"></div>
+              <div class="hero-emblem">
+                <span class="emblem-orbit emblem-orbit-one"></span>
+                <span class="emblem-orbit emblem-orbit-two"></span>
+                <span class="emblem-node"></span>
+                <img src="images/logo.jpeg" alt="" class="hero-logo">
+              </div>
+              <div class="stage-chip stage-chip-top"><span>01</span> DESIGN · DEVELOP</div>
+              <div class="stage-chip stage-chip-bottom"><span class="status-dot"></span> BUILT BY STUDENTS</div>
+            </div>
           </div>
+          <a class="hero-scroll-cue" href="#activities"><span></span> Scroll to explore</a>
         </div>
       </div>
     </section>
+
+    <div class="club-marquee" aria-label="Code, create, and build together">
+      <div class="club-marquee-track" aria-hidden="true">
+        <span>CODE WITH PURPOSE</span><i></i><span>DESIGN FOR PEOPLE</span><i></i><span>BUILD TOGETHER</span><i></i><span>MAKE CAMPUS BETTER</span><i></i>
+        <span>CODE WITH PURPOSE</span><i></i><span>DESIGN FOR PEOPLE</span><i></i><span>BUILD TOGETHER</span><i></i><span>MAKE CAMPUS BETTER</span><i></i>
+      </div>
+    </div>
 
     <!-- ===================== ACTIVITIES ===================== -->
     <section class="activities-section py-5" id="activities">
@@ -121,8 +113,7 @@
           <h2 class="activity-heading mt-4">IT Club Activities (2026)</h2>
         </div>
 
-        <div id="activityCarousel" class="carousel slide activity-carousel"
-             data-bs-ride="carousel" data-bs-interval="4000">
+        <div id="activityCarousel" class="carousel slide activity-carousel">
           <div class="carousel-inner">
 
             <!-- Activity 1 -->
@@ -138,7 +129,7 @@
                   </div>
                   <div class="col-lg-7">
                     <div class="card-body p-4 p-lg-5">
-                      <small class="activity-date">-5 June 2026</small>
+                      <small class="activity-date">05 June 2026</small>
                       <h5 class="card-title activity-title mt-3">Plant Identification Campaign</h5>
                       <p class="card-text activity-description mt-3">
                         Conducted a Plant Identification Campaign across the campus to promote environmental awareness. Students identified and documented various plant species, encouraging biodiversity conservation and the use of digital tools for learning about native plants.
@@ -164,7 +155,7 @@
                   </div>
                   <div class="col-lg-7">
                     <div class="card-body p-4 p-lg-5">
-                      <small class="activity-date">-24 june 2026</small>
+                      <small class="activity-date">24 June 2026</small>
                       <h5 class="card-title activity-title mt-3">Alan Turing Day Documentary Screening</h5>
                       <p class="card-text activity-description mt-3">
                         Organized a screening of the documentary "The Life and Death of Alan Turing" in connection with Alan Turing Day for IT Club members. The programme highlighted Alan Turing's pioneering contributions to computer science and artificial intelligence, followed by a discussion among participants. Eight students participated in the programme.
@@ -190,7 +181,7 @@
                   </div>
                   <div class="col-lg-7">
                     <div class="card-body p-4 p-lg-5">
-                      <small class="activity-date">-17 july 2026</small>
+                      <small class="activity-date">17 July 2026</small>
                       <h5 class="card-title activity-title mt-3">Cyber Security Awareness Campaign</h5>
                       <p class="card-text activity-description mt-3">
                         Conducted a campus-wide Cyber Security Awareness Campaign focusing on safe online practices, password security, phishing awareness, digital privacy, and responsible internet usage. Awareness materials and promotional posters were prepared as part of the campaign.
@@ -216,7 +207,7 @@
                   </div>
                   <div class="col-lg-7">
                     <div class="card-body p-4 p-lg-5">
-                      <small class="activity-date">-june-july 2026</small>
+                      <small class="activity-date">June–July 2026</small>
                       <h5 class="card-title activity-title mt-3">FIFA World Cup Winner Prediction Contest</h5>
                       <p class="card-text activity-description mt-3">
                         Organized a FIFA World Cup Winner Prediction Contest online through the website developed by IT club member, Mr Faris Moideen to engage students during the tournament. Participants predicted the eventual FIFA World Cup champion, promoting interaction and enthusiasm among students through a fun, technology-enabled activity.
@@ -239,6 +230,12 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+        <div class="activity-pagination" role="group" aria-label="Choose an activity">
+          <button type="button" class="activity-page active" data-bs-target="#activityCarousel" data-bs-slide-to="0" aria-label="Show activity 1" aria-current="true"><span>01</span></button>
+          <button type="button" class="activity-page" data-bs-target="#activityCarousel" data-bs-slide-to="1" aria-label="Show activity 2"><span>02</span></button>
+          <button type="button" class="activity-page" data-bs-target="#activityCarousel" data-bs-slide-to="2" aria-label="Show activity 3"><span>03</span></button>
+          <button type="button" class="activity-page" data-bs-target="#activityCarousel" data-bs-slide-to="3" aria-label="Show activity 4"><span>04</span></button>
         </div>
       </div>
     </section>
@@ -444,7 +441,6 @@ B.Sc. Computer Science (2023–2026 Batch)</div>
     <section class="newsletter-section py-5" id="articles">
       <div class="container">
         <div class="text-center mb-5">
-          <span class="newsletter-badge">LATEST UPDATES</span>
           <h2 class="newsletter-heading mt-4">Club Newsletters</h2>
           <p class="newsletter-subtitle mt-3">
             Stay informed with the latest activities, achievements, announcements,
@@ -462,7 +458,7 @@ B.Sc. Computer Science (2023–2026 Batch)</div>
                      alt="Web Development Bootcamp Successfully Completed" loading="lazy">
               </div>
               <div class="card-body d-flex flex-column p-4">
-                <small class="newsletter-date">-July 15, 2026</small>
+                <small class="newsletter-date">July 15, 2026</small>
                 <h5 class="card-title newsletter-title mt-2">Web Development Bootcamp Successfully Completed</h5>
                 <p class="card-text newsletter-text">Students completed an intensive workshop covering React, Bootstrap, and modern web development practices.</p>
                 <div class="news-full d-none">The IT Club successfully conducted a Web Development Bootcamp where students learned HTML, CSS, JavaScript, React, Bootstrap, and modern frontend development techniques. Participants worked on real-world projects, collaborated with peers, and gained hands-on experience in building responsive web applications.</div>
@@ -480,7 +476,7 @@ B.Sc. Computer Science (2023–2026 Batch)</div>
                      alt="Hackathon 2026 Winners Announced" loading="lazy">
               </div>
               <div class="card-body d-flex flex-column p-4">
-                <small class="newsletter-date">-June 28, 2026</small>
+                <small class="newsletter-date">June 28, 2026</small>
                 <h5 class="card-title newsletter-title mt-2">Hackathon 2026 Winners Announced</h5>
                 <p class="card-text newsletter-text">The annual IT Club Hackathon saw teams develop innovative solutions in just 24 hours.</p>
                 <div class="news-full d-none">Hackathon 2026 brought together talented students from various departments. Teams worked around the clock to create innovative software solutions, websites, and mobile applications. The event encouraged creativity, teamwork, and problem-solving while providing valuable experience in software development.</div>
@@ -498,7 +494,7 @@ B.Sc. Computer Science (2023–2026 Batch)</div>
                      alt="AI &amp; Future Technologies Seminar" loading="lazy">
               </div>
               <div class="card-body d-flex flex-column p-4">
-                <small class="newsletter-date">-May 20, 2026</small>
+                <small class="newsletter-date">May 20, 2026</small>
                 <h5 class="card-title newsletter-title mt-2">AI &amp; Future Technologies Seminar</h5>
                 <p class="card-text newsletter-text">Industry experts shared insights into AI, machine learning, and emerging technologies.</p>
                 <div class="news-full d-none">The seminar focused on Artificial Intelligence, Machine Learning, and future technology trends. Industry professionals shared their experiences, discussed career opportunities, and demonstrated real-world AI applications. Students gained valuable insights into one of the fastest-growing fields in technology.</div>
@@ -560,6 +556,10 @@ B.Sc. Computer Science (2023–2026 Batch)</div>
       <div class="footer-bottom">© 2026 Mary Matha IT Club. All Rights Reserved.</div>
     </div>
   </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <!-- ===================== MODALS ===================== -->
 

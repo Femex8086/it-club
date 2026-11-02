@@ -1,13 +1,72 @@
-/* Mary Matha IT Club – small bit of JS (Bootstrap handles carousel, navbar & modals) */
+/* Mary Matha IT Club – motion, navigation, carousel and modal interactions. */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Welcome popup on page load
-  var welcomeEl = document.getElementById("welcomeModal");
-  if (welcomeEl) {
-    new bootstrap.Modal(welcomeEl).show();
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // Pointer-reactive spotlight and 3D tilt keep the hero alive without extra UI.
+  var hero = document.querySelector(".hero-section");
+  var emblem = document.querySelector(".hero-emblem");
+  if (hero && finePointer && !reduceMotion) {
+    hero.addEventListener("pointermove", function (event) {
+      var rect = hero.getBoundingClientRect();
+      var x = (event.clientX - rect.left) / rect.width;
+      var y = (event.clientY - rect.top) / rect.height;
+      hero.style.setProperty("--pointer-x", (x * 100) + "%");
+      hero.style.setProperty("--pointer-y", (y * 100) + "%");
+      if (emblem) {
+        emblem.style.setProperty("--rotate-x", ((0.5 - y) * 10) + "deg");
+        emblem.style.setProperty("--rotate-y", ((x - 0.5) * 12) + "deg");
+      }
+    });
+    hero.addEventListener("pointerleave", function () {
+      hero.style.setProperty("--pointer-x", "50%");
+      hero.style.setProperty("--pointer-y", "50%");
+      if (emblem) {
+        emblem.style.setProperty("--rotate-x", "0deg");
+        emblem.style.setProperty("--rotate-y", "0deg");
+      }
+    });
   }
 
-  // 2. Activity image popup
+  // Pointer-responsive depth across all feature cards, only on fine pointers.
+  if (finePointer && !reduceMotion) {
+    document.querySelectorAll(".project-card, .newsletter-card, .activity-card").forEach(function (card) {
+      card.classList.add("pointer-tilt");
+      card.addEventListener("pointermove", function (event) {
+        var rect = card.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width;
+        var y = (event.clientY - rect.top) / rect.height;
+        card.style.setProperty("--tilt-x", ((x - 0.5) * 5) + "deg");
+        card.style.setProperty("--tilt-y", ((0.5 - y) * 5) + "deg");
+        card.style.setProperty("--glow-x", (x * 100) + "%");
+        card.style.setProperty("--glow-y", (y * 100) + "%");
+      });
+      card.addEventListener("pointerleave", function () {
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
+      });
+    });
+  }
+
+  // Fade project and article cards into view as visitors scroll.
+  var revealItems = document.querySelectorAll(".activity-card, .project-card, .newsletter-card, .activities-section .text-center, .contributions-section .text-center, .newsletter-section .text-center");
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(function (item, index) {
+      item.classList.add("scroll-reveal");
+      item.style.setProperty("--reveal-delay", ((index % 3) * 75) + "ms");
+      revealObserver.observe(item);
+    });
+  }
+
+  // Activity image popup
   var activityModal = document.getElementById("activityModal");
   activityModal.addEventListener("show.bs.modal", function (e) {
     var card = e.relatedTarget.closest(".activity-card");
@@ -17,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modalImg.alt = img.getAttribute("alt") || "Activity";
   });
 
-  // 3. Project details popup
+  // Project details popup
   var projectModal = document.getElementById("projectModal");
   projectModal.addEventListener("show.bs.modal", function (e) {
     var card = e.relatedTarget.closest(".project-card");
@@ -35,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       card.querySelector(".visit-btn").getAttribute("href");
   });
 
-  // 4. Newsletter article popup
+  // Newsletter article popup
   var newsModal = document.getElementById("newsModal");
   newsModal.addEventListener("show.bs.modal", function (e) {
     var card = e.relatedTarget.closest(".newsletter-card");
@@ -53,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       card.querySelector(".news-full").textContent.trim();
   });
 
-  // 5. Highlight the nav link of the section currently in view
+  // Highlight the current section and keep the page controls in sync.
   var links = document.querySelectorAll(".nav-links .nav-link");
   var sections = Array.prototype.map.call(links, function (a) {
     return document.querySelector(a.getAttribute("href"));
@@ -72,11 +131,49 @@ document.addEventListener("DOMContentLoaded", function () {
     links.forEach(function (a, i) {
       a.classList.toggle("active", i === current);
     });
+
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    var progressBar = document.getElementById("pageProgressBar");
+    if (progressBar) progressBar.style.width = progress + "%";
+
+    var navbar = document.querySelector(".custom-navbar");
+    if (navbar) navbar.classList.toggle("is-scrolled", window.scrollY > 18);
+
+    var backToTop = document.getElementById("backToTop");
+    if (backToTop) backToTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.65);
   }
   window.addEventListener("scroll", updateActive, { passive: true });
   updateActive();
 
-  // 6. Mobile menu (slides in from the right): close it, then scroll to the section
+  var backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
+  var activityCarousel = document.getElementById("activityCarousel");
+  if (activityCarousel) {
+    var carouselInstance = bootstrap.Carousel.getOrCreateInstance(activityCarousel, {
+      interval: 6500,
+      pause: "hover",
+      touch: true
+    });
+    if (!reduceMotion) carouselInstance.cycle();
+
+    var activityPages = activityCarousel.parentElement.querySelectorAll(".activity-page");
+    activityCarousel.addEventListener("slid.bs.carousel", function (event) {
+      activityPages.forEach(function (button, index) {
+        var active = index === event.to;
+        button.classList.toggle("active", active);
+        if (active) button.setAttribute("aria-current", "true");
+        else button.removeAttribute("aria-current");
+      });
+    });
+  }
+
+  // On mobile, close the menu before scrolling to the selected section.
   var menuEl = document.getElementById("main-navbar");
   links.forEach(function (a) {
     a.addEventListener("click", function (ev) {
