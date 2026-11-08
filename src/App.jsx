@@ -36,7 +36,7 @@ function Hero() {
 }
 
 function About() {
-  const stats = [['04', 'PROJECTS ON DISPLAY'], ['04', 'PROGRAMS ARCHIVED'], ['01', 'CAMPUS WE CALL HOME'], [String(year), 'STILL BUILDING']];
+  const stats = [['10', 'PROJECTS ON DISPLAY'], ['04', 'PROGRAMS ARCHIVED'], ['01', 'CAMPUS WE CALL HOME'], [String(year), 'STILL BUILDING']];
   return <section className="about section-shell" id="about">
     <div className="section-heading"><span className="mono-label">01 / THE CLUB</span><span className="section-index">A place to learn by doing</span></div>
     <div className="manifesto-wrap"><p className="manifesto">We make technology <span className="fill-word">useful</span> in everyday campus life. We learn by making, share what works, and bring more students into the process.</p></div>

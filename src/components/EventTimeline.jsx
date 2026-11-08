@@ -1,6 +1,14 @@
 import { useState } from 'react';
 
 export default function EventTimeline({ events }) {
-  const [expanded, setExpanded] = useState('');
-  return <section className="events section-shell" id="programs"><div className="section-heading"><span className="mono-label">03 / OUT IN THE WORLD</span><span className="section-index">Programs and events</span></div><div className="events-layout"><div className="events-title"><h2>Learning<br />happens<br /><em>together.</em></h2><p>Ideas leave the screen and meet the campus.</p></div><div className="event-list">{events.map((item, index) => { const isOpen = expanded === item.title; const detailId = 'event-detail-' + index; return <article className={'event-item ' + (isOpen ? 'event-open' : '')} key={item.title}><button className="event-trigger" aria-expanded={isOpen} aria-controls={detailId} onClick={() => setExpanded(isOpen ? '' : item.title)}><span className="event-date mono-label">{item.date}</span><span className="event-name">{item.title}</span><span className="event-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span></button><p className="event-note">{item.note}</p><div className="event-detail" id={detailId} hidden={!isOpen}><p>{item.detail}</p><img src={item.image} alt={item.alt} loading="lazy" /></div></article>; })}</div></div></section>;
+  const [expanded, setExpanded] = useState(() => new Set());
+  function toggleEvent(title) {
+    setExpanded((current) => {
+      const next = new Set(current);
+      if (next.has(title)) next.delete(title);
+      else next.add(title);
+      return next;
+    });
+  }
+  return <section className="events section-shell" id="programs"><div className="section-heading"><span className="mono-label">03 / OUT IN THE WORLD</span><span className="section-index">Programs and events</span></div><div className="events-layout"><div className="events-title"><h2>Learning<br />happens<br /><em>together.</em></h2><p>Ideas leave the screen and meet the campus.</p></div><div className="event-list">{events.map((item, index) => { const isOpen = expanded.has(item.title); const detailId = 'event-detail-' + index; return <article className={'event-item ' + (isOpen ? 'event-open' : '')} key={item.title}><button className="event-trigger" aria-expanded={isOpen} aria-controls={detailId} onClick={() => toggleEvent(item.title)}><span className="event-date mono-label">{item.date}</span><span className="event-name">{item.title}</span><span className="event-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span></button><p className="event-note">{item.note}</p><div className="event-detail-wrap" aria-hidden={!isOpen}><div className="event-detail" id={detailId}><p>{item.detail}</p><img src={item.image} alt={item.alt} width="1200" height="900" loading="lazy" decoding="async" /></div></div></article>; })}</div></div></section>;
 }
